@@ -1,8 +1,9 @@
 'use client';
+import { useSearchParams } from 'next/navigation';
+
 
 import CategoryBox from "../CategoryBox";
-
-
+import Container from "../Container";
 import { TbBeach, TbPool } from 'react-icons/tb'
 import { GiCampingTent } from 'react-icons/gi'
 import { MdOutlineVilla, MdPark } from 'react-icons/md';
@@ -59,26 +60,30 @@ export const categories = [
 ]
 
 const Categories = () => {
+    const params = useSearchParams();
+    const category = params?.get('category');
     return (
-
-        <div className="
-                    flex
-                    flex-row
-                    items-center
-                    justify-center
-                    pt-4
-                    overflow-x-auto
-                    overscroll-behavior-inline-contain
+        <Container>
+            <div
+                className="
+                pt-4
+                flex 
+                flex-row 
+                items-center 
+                justify-between
+                overflow-x-auto
                 "
-        >
-            {categories.map((item) => (
-                <CategoryBox
-                    key={item.label}
-                    label={item.label}
-                    icon={item.icon}
-                />
-            ))}
-        </div>
+            >
+                {categories.map((item) => (
+                    <CategoryBox
+                        key={item.label}
+                        label={item.label}
+                        icon={item.icon}
+                        selected={category === item.label}
+                    />
+                ))}
+            </div>
+        </Container>
     )
 }
 

@@ -7,7 +7,7 @@ const Product = () => {
   return (
     <Container >
       <div class="
-    pt-24
+    pt-48
     grid 
     grid-cols-1 
     sm:grid-cols-2 
