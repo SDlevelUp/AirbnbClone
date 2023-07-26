@@ -16,7 +16,7 @@ const InfoCard = (props) => {
           <img
             src={props.cover}
             alt={props.name}
-            fill
+            fill="true"
             className="
               object-cover 
               h-full 

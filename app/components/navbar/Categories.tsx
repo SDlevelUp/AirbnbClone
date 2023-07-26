@@ -1,6 +1,5 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
-
+// import { useSearchParams } from 'next/navigation';
 
 import CategoryBox from "../CategoryBox";
 import Container from "../Container";
@@ -43,12 +42,12 @@ export const categories = [
         description: 'Cette propriété est moderne'
     },
     {
-        label: 'Parcs régionaux',
+        label: 'Parcs',
         icon: MdPark,
         description: 'Cette propriété est moderne'
     },
     {
-        label: 'Sensations fortes',
+        label: 'Sensationnel',
         icon: GiFlyingFox,
         description: 'Cette propriété est moderne'
     },
@@ -60,26 +59,25 @@ export const categories = [
 ]
 
 const Categories = () => {
-    const params = useSearchParams();
-    const category = params?.get('category');
+    // const params = useSearchParams();
+    // const category = params?.get('category');
     return (
         <Container>
             <div
                 className="
-                pt-4
                 flex 
                 flex-row 
                 items-center 
                 justify-between
                 overflow-x-auto
-                "
+            "
             >
                 {categories.map((item) => (
                     <CategoryBox
                         key={item.label}
                         label={item.label}
                         icon={item.icon}
-                        selected={category === item.label}
+                    // selected={category === item.label}
                     />
                 ))}
             </div>
