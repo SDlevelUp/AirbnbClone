@@ -1,5 +1,5 @@
 import React from "react";
-import Client from "./components/ClientOnly";
+import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/navbar/Navbar";
 import './globals.css'
 import Product from "./components/Product";
@@ -15,34 +15,19 @@ export default async function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <Client>
+        <ClientOnly>
           <Navbar />
           <Product />
-          <Footer />
-        </Client>
+          <div className="pt-5">
+            <Footer />
+          </div>
+        </ClientOnly>
         {children}
       </body>
-    </html>
+    </html >
   )
 }
 
 
 
 
-
-
-
-
-
-
-
-
-// import Header from "../components/Header";
-// import Footer from "../components/Footer";
-// import Product from "../components/Product";
-// import Filter from "../components/Filter";
-
-{/* <Header /> */ }
-{/* <Filter /> */ }
-{/* <Product />
-        <Footer /> */}

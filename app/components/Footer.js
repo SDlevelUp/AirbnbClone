@@ -1,11 +1,10 @@
 const Footer = () => {
     return (
-
         <footer>
-            <div className="justify-center list-none flex items-center bg-white sticky bottom-0 h-14 w-full border-t-2 shadow-md shadow-gray-300">
-                <ul className="flex items-center justify-center space-x-4 md:mt-3">
+            <div class="justify-center list-none flex items-center bg-white sticky md:h-16 bottom-0 md:sticky md:flex-col md:items-center w-full border-t-2 shadow-md shadow-gray-300">
+                <ul class="flex flex-col md:items-start items-center space-y-4 md:space-y-0 md:flex-row md:space-x-4">
                     <li>
-                        <a href="#">© 2023 Airbnblike, all rights reserved</a>
+                        <a href="#">© 2023 Airbnblike, tous droits réservés</a>
                     </li>
                     <li>
                         <a href="#">Politique de confidentialité</a>
@@ -22,7 +21,7 @@ const Footer = () => {
                 </ul>
             </div>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;

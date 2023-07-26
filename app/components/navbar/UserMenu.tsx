@@ -19,13 +19,14 @@ const UserMenu = () => {
                     onClick={() => { }}
                     className="
                         hidden
-                        sm:block
-                        text-sm
-                        font-semibold
-                        py-3
-                        px-4
-                        rounded-full
-                        bg-neutral-100
+                        md:block
+                        text-sm 
+                        font-semibold 
+                        py-3 
+                        px-4 
+                        rounded-full 
+                        hover:bg-neutral-100 
+                        transition 
                         cursor-pointer
                     "
                 >
@@ -38,16 +39,16 @@ const UserMenu = () => {
                         p-4
                         md:py-1
                         md:px-2
-                        border-[1px]
-                        border-neutral-200
-                        flex
-                        flex-row
-                        items-center
-                        gap-3
-                        rounded-full
-                        cursor-pointer
+                        border-[1px] 
+                        border-neutral-200 
+                        flex 
+                        flex-row 
+                        items-center 
+                        gap-3 
+                        rounded-full 
+                        cursor-pointer 
+                        hover:shadow-md 
                         transition
-                        hover:shadow-md
                     "
                 >
                     <RiMenu2Line />
