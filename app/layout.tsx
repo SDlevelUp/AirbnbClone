@@ -1,9 +1,10 @@
-import React from "react";
 import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/navbar/Navbar";
-import './globals.css'
 import Product from "./components/Product";
 import Footer from "./components/Footer";
+// import Modal from "./components/modals/Modal";
+
+import './globals.css';
 
 export default async function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default async function RootLayout({
       <head />
       <body>
         <ClientOnly>
+          {/* <Modal title="Connexion ou inscription" isOpen /> */}
           <Navbar />
           <Product />
           <div className="pt-5">

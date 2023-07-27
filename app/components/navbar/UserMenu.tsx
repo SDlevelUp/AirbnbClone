@@ -65,7 +65,7 @@ const UserMenu = () => {
                         rounded-xl
                         shadow-md
                         w-[40vw]
-                        md:w-3/4
+                        md:w-2/4
                         overflow-hidden
                         bg-white
                         top-12
@@ -82,7 +82,14 @@ const UserMenu = () => {
                         "
                     >
                         <>
-                            {MenuItem}
+                            <MenuItem
+                                label="Connexion"
+                                onclick={() => { }}
+                            />
+                            <MenuItem
+                                label="S'enregistrer"
+                                onclick={() => { }}
+                            />
                         </>
                     </div>
                 </div>
