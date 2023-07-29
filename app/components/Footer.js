@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
         <footer>
-            <div class="justify-center list-none flex items-center bg-white sticky md:h-16 bottom-0 md:sticky md:flex-col md:items-center w-full border-t-2 shadow-md shadow-gray-300">
-                <ul class="flex flex-col md:items-start items-center space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+            <div className="justify-center list-none flex items-center bg-white sticky md:h-16 bottom-0 md:sticky md:flex-col md:items-center w-full border-t-2 shadow-md shadow-gray-300">
+                <ul className="flex flex-col md:items-start items-center space-y-4 md:space-y-0 md:flex-row md:space-x-4">
                     <li>
                         <a href="#">© 2023 Airbnblike, tous droits réservés</a>
                     </li>

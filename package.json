@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.2",
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
@@ -24,14 +25,17 @@
     "next-auth": "^4.22.1",
     "query-string": "^8.1.0",
     "react": "18.2.0",
+    "react-daisyui": "^4.0.1",
     "react-date-range": "^1.4.0",
     "react-datepicker": "^4.10.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
+    "react-hot-toast": "^2.4.1",
     "react-i18next": "^12.1.5",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
-    "react-spinners": "^0.13.8"
+    "react-spinners": "^0.13.8",
+    "zustand": "^4.3.9"
   },
   "devDependencies": {
     "@types/react": "18.0.38",

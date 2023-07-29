@@ -1,5 +1,5 @@
 'use client';
-// import { useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import CategoryBox from "../CategoryBox";
 import Container from "../Container";
@@ -59,12 +59,13 @@ export const categories = [
 ]
 
 const Categories = () => {
-    // const params = useSearchParams();
-    // const category = params?.get('category');
+    const params = useSearchParams();
+    const category = params?.get('category');
     return (
         <Container>
             <div
                 className="
+                pt-4
                 flex 
                 flex-row 
                 items-center 
@@ -77,7 +78,7 @@ const Categories = () => {
                         key={item.label}
                         label={item.label}
                         icon={item.icon}
-                    // selected={category === item.label}
+                        selected={category === item.label}
                     />
                 ))}
             </div>

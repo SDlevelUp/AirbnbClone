@@ -3,7 +3,6 @@ import Container from '../Container';
 import Logo from "./Logo";
 import Search from './Search';
 import UserMenu from "./UserMenu";
-
 import Categories from './Categories';
 
 const Navbar = () => {
@@ -24,7 +23,7 @@ const Navbar = () => {
                         justify-between
                         gap-3
                         md:gap-0
-                    "
+                      "
                     >
                         <Logo />
                         <Search />

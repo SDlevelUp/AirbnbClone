@@ -20,7 +20,9 @@ const Button: React.FC<ButtonProps> = ({
     icon: Icon,
 }) => {
     return (
-        <button disabled={disabled} onClick={onClick}
+        <button
+            disabled={disabled}
+            onClick={onClick}
             className={`
                 relative
                 disabled:opacity-70
@@ -45,8 +47,7 @@ const Button: React.FC<ButtonProps> = ({
                         absolute
                         left-4
                         top-3
-                    "
-                />
+                "/>
             )}
             {label}
         </button>

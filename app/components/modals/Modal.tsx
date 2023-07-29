@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect, useCallback, use } from "react";
+import { useState, useEffect, useCallback } from "react";
+import Button from "../Button";
 
 interface ModalProps {
     isOpen?: boolean;
@@ -20,8 +21,8 @@ const Modal: React.FC<ModalProps> = ({
     onSubmit,
     title,
     body,
-    footer,
     actionLabel,
+    footer,
     disabled,
     secondaryAction,
     secondaryActionLabel
@@ -36,30 +37,33 @@ const Modal: React.FC<ModalProps> = ({
         if (disabled) {
             return;
         }
+
         setShowModal(false);
         setTimeout(() => {
             onClose();
-        }, 300);
-    }, [[disabled, onClose]]);
-
+        }, 300)
+    }, [onClose, disabled]);
 
     const handleSubmit = useCallback(() => {
         if (disabled) {
             return;
         }
+
         onSubmit();
-    }, [disabled, onSubmit])
+    }, [onSubmit, disabled]);
 
     const handleSecondaryAction = useCallback(() => {
-        if (disabled || secondaryAction) {
+        if (disabled || !secondaryAction) {
             return;
         }
+
         secondaryAction();
-    }, [disabled, secondaryAction])
+    }, [secondaryAction, disabled]);
 
     if (!isOpen) {
-        return (null)
+        return null;
     }
+
 
     return (
         <>
@@ -129,13 +133,14 @@ const Modal: React.FC<ModalProps> = ({
                             "
                             >
                                 <button
-                                    onClick={handleClose}
                                     className="
                                     btn 
                                     btn-circle 
                                     absolute 
                                     left-9
+                                   hover:bg-red-500
                                 "
+                                    onClick={handleClose}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button>
@@ -146,27 +151,43 @@ const Modal: React.FC<ModalProps> = ({
                                 </div>
                             </div>
 
-                            {/* Body */}
-
-                            <div></div>
-
-
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                                {body}
+                            </div>
+                            {/*footer*/}
+                            <div className="flex flex-col gap-2 p-6">
+                                <div
+                                    className="
+                                        flex 
+                                        flex-row 
+                                        items-center 
+                                        gap-4 
+                                        w-full
+                                    "
+                                >
+                                    {secondaryAction && secondaryActionLabel && (
+                                        <Button
+                                            disabled={disabled}
+                                            label={secondaryActionLabel}
+                                            onClick={handleSecondaryAction}
+                                            outline
+                                        />
+                                    )}
+                                    <Button
+                                        disabled={disabled}
+                                        label={actionLabel}
+                                        onClick={handleSubmit}
+                                    />
+                                </div>
+                                {footer}
+                            </div>
                         </div>
-
-
-
-
-
-
-
-
                     </div>
                 </div>
-
             </div>
         </>
-    )
-
+    );
 }
 
-export default Modal
+export default Modal;

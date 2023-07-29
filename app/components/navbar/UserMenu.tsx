@@ -5,13 +5,15 @@ import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 
 import { RiMenu2Line } from "react-icons/ri";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 const UserMenu = () => {
+    const registerModal = useRegisterModal();
     const [isOpen, setIsOpen] = useState(false);
-
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
     }, []);
+
     return (
         <div className="relative ">
             <div className="flex flex-row items-center gap-3">
@@ -71,7 +73,6 @@ const UserMenu = () => {
                         top-12
                         text-sm
                         right-0
-                                        
                     "
                 >
                     <div
@@ -88,7 +89,7 @@ const UserMenu = () => {
                             />
                             <MenuItem
                                 label="S'enregistrer"
-                                onclick={() => { }}
+                                onclick={(registerModal.onOpen)}
                             />
                         </>
                     </div>
