@@ -63,16 +63,16 @@ const UserMenu = () => {
             {isOpen && (
                 <div
                     className="
-                        absolute
-                        rounded-xl
+                        absolute 
+                        rounded-xl 
                         shadow-md
                         w-[40vw]
-                        md:w-2/4
-                        overflow-hidden
-                        bg-white
-                        top-12
+                        md:w-3/4 
+                        bg-white 
+                        overflow-hidden 
+                        right-0 
+                        top-12 
                         text-sm
-                        right-0
                     "
                 >
                     <div

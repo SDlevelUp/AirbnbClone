@@ -1,6 +1,3 @@
-import { Stringifiable } from 'query-string'
-import React from 'react'
-
 interface HeadingProps {
     title: string;
     subtitle?: string;

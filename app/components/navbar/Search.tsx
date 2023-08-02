@@ -14,14 +14,15 @@ const Search = () => {
             hover:shadow-md 
             transition 
             cursor-pointer
-        ">
+            "
+        >
             <div
                 className="
-                    flex
-                    flex-row
-                    items-center
+                    flex 
+                    flex-row 
+                    items-center 
                     justify-between
-                "
+            "
             >
                 <div
                     className="
@@ -32,7 +33,6 @@ const Search = () => {
                 >
                     N'importe où
                 </div>
-
                 <div
                     className="
                         hidden 
@@ -43,19 +43,20 @@ const Search = () => {
                         border-x-[1px] 
                         flex-1 
                         text-center
-                    ">
+                    "
+                >
                     Une semaine
                 </div>
                 <div
                     className="
-                    text-sm 
-                    pl-6 
-                    pr-2 
-                    text-gray-600 
-                    flex 
-                    flex-row 
-                    items-center 
-                    gap-3
+                        text-sm 
+                        pl-6 
+                        pr-2 
+                        text-gray-600 
+                        flex 
+                        flex-row 
+                        items-center 
+                        gap-3
                 ">
                     <div className="hidden sm:block">
                         Ajouter des voyageurs

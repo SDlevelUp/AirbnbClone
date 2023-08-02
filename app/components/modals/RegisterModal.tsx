@@ -1,8 +1,9 @@
 'use client';
 
 import axios from 'axios';
-import { GrGithub } from 'react-icons/gr';
 import { FcGoogle } from 'react-icons/fc';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { CiMail } from 'react-icons/ci';
 import { useCallback, useState } from 'react';
 import {
     FieldValues,
@@ -13,7 +14,8 @@ import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../Inputs/Input';
-import { toast } from 'react-hot-toast'
+import { toast } from 'react-hot-toast';
+import Button from '../Button';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -32,13 +34,13 @@ const RegisterModal = () => {
             password: ''
         }
     });
-    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
-        await axios.post('/api/register', data)
+        axios.post('/api/register', data)
             .then(() => {
                 registerModal.onClose();
             })
-            .catch((err) => {
+            .catch((error) => {
                 toast.error('Ooops...une erreur semble s’être glisée dans le formulaire.')
             })
             .finally(() => {
@@ -50,7 +52,6 @@ const RegisterModal = () => {
         <div className='flex flex-col gap-4'>
             <Heading
                 title='Bienvenue chez Airbnb'
-                subtitle="Créer un compte!"
             />
             <Input
                 id="email"
@@ -80,7 +81,36 @@ const RegisterModal = () => {
                 required
             />
         </div>
-    )
+    );
+
+
+    const footerContent = (
+        <div className='flex flex-col gap-4 mt-3'>
+            <div className="flex items-center gap-4">
+                <hr className="flex-grow border-gray-400" />
+                <div className="text-gray-500">ou</div>
+                <hr className="flex-grow border-gray-400" />
+            </div>
+            <Button
+                outline
+                label="Continuer avec Facebook"
+                icon={FaFacebookSquare}
+                onClick={() => { }}
+            />
+            <Button
+                outline
+                label="Continuer avec Google"
+                icon={FcGoogle}
+                onClick={() => { }}
+            />
+            <Button
+                outline
+                label="Continuer avec une adresse e-mail"
+                icon={CiMail}
+                onClick={() => { }}
+            />
+        </div>
+    );
 
     return (
         <Modal
@@ -91,6 +121,7 @@ const RegisterModal = () => {
             onClose={registerModal.onClose}
             onSubmit={handleSubmit(onSubmit)}
             body={bodyContent}
+            footer={footerContent}
         />
     )
 }
