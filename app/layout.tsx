@@ -5,6 +5,11 @@ import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import './globals.css';
 
+export const metadata = {
+  title: 'Airbnb',
+  description: 'Airbnb Clone',
+}
+
 export default async function RootLayout({
   children,
 }: {

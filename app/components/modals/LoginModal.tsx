@@ -67,7 +67,7 @@ const LoginModal = () => {
     }, [loginModal, registerModal])
 
     const bodyContent = (
-        <form onSubmit={handleSubmit(onSubmit)}> {/* Ajouter la balise form ici */}
+        <form onSubmit={handleSubmit(onSubmit)}> 
             <div className="flex flex-col gap-4">
                 <Heading
                     title="Salut! Content de te revoir !"
