@@ -1,10 +1,8 @@
 import ClientOnly from "./components/ClientOnly";
 import Navbar from "./components/navbar/Navbar";
-import Product from "./components/Product";
-import Footer from "./components/Footer";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
-
+import LoginModal from "./components/modals/LoginModal";
 import './globals.css';
 
 export default async function RootLayout({
@@ -18,16 +16,15 @@ export default async function RootLayout({
       <body>
         <ClientOnly>
           <ToasterProvider />
+          <LoginModal />
           <RegisterModal />
           <Navbar />
-          <Product />
-          <div className="pt-5">
-            <Footer />
-          </div>
         </ClientOnly>
-        {children}
+        <div className="pb-20 pt-28">
+          {children}
+        </div>
       </body>
-    </html >
+    </html>
   )
 }
 

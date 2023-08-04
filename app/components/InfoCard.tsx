@@ -1,5 +1,5 @@
 import HeartButton from "./HeartButton";
-
+import Image from "next/image";
 const InfoCard = (props) => {
   return (
     <div className="col-span-1 cursor-pointer group">
@@ -13,10 +13,8 @@ const InfoCard = (props) => {
             rounded-xl
           "
         >
-          <img
-            src={props.cover}
-            alt={props.name}
-            fill="true"
+          <Image
+            fill
             className="
               object-cover 
               h-full 
@@ -24,6 +22,8 @@ const InfoCard = (props) => {
               group-hover:scale-110 
               transition
             "
+            src={props.cover}
+            alt={props.name}
           />
           <div className="
               absolute

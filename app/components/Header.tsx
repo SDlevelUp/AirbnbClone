@@ -45,11 +45,8 @@ const Header = () => {
 
                         {/*FILTRE*/}
                         <div className="p-1 text-[white] rounded-full border bg-[#FF385C] mr-2 sm:display md:display tablet:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round bg-[red]">
-                                <path d="M20 7h-9"></path>
-                                <path d="M14 17H5"></path>
-                                <circle cx="17" cy="17" r="3"></circle>
-                                <circle cx="7" cy="7" r="3"></circle>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 bg-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="0" y="0" width="24" height="24" />
                             </svg>
                         </div>
                     </div>

@@ -1,5 +1,4 @@
 'use client';
-
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
 import { signIn } from 'next-auth/react';
@@ -51,7 +50,7 @@ const LoginModal = () => {
                     setIsLoading(false);
 
                     if (callback?.ok) {
-                        toast.success('Logged in');
+                        toast.success('Connexion réussie!');
                         router.refresh();
                         loginModal.onClose();
                     }
@@ -68,29 +67,31 @@ const LoginModal = () => {
     }, [loginModal, registerModal])
 
     const bodyContent = (
-        <div className="flex flex-col gap-4">
-            <Heading
-                title="Welcome back"
-                subtitle="Login to your account!"
-            />
-            <Input
-                id="email"
-                label="Email"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-            <Input
-                id="password"
-                label="Password"
-                type="password"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-            />
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)}> {/* Ajouter la balise form ici */}
+            <div className="flex flex-col gap-4">
+                <Heading
+                    title="Salut! Content de te revoir !"
+                    subtitle="Connectes-toi!"
+                />
+                <Input
+                    id="email"
+                    label="E-mail"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+                <Input
+                    id="password"
+                    label="Mot de passe"
+                    type="password"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+        </form>
     )
 
     const footerContent = (
@@ -98,27 +99,27 @@ const LoginModal = () => {
             <hr />
             <Button
                 outline
-                label="Continue with Google"
+                label="Continue avec Google"
                 icon={FcGoogle}
                 onClick={() => signIn('google')}
             />
             <Button
                 outline
-                label="Continue with Github"
+                label="Continue avec Github"
                 icon={AiFillGithub}
                 onClick={() => signIn('github')}
             />
             <div className="
-        text-neutral-500 text-center mt-4 font-light">
-                <p>First time using Airbnb?
+                text-neutral-500 text-center mt-4 font-light">
+                <p>C'est ton premier jour sur Airbnb?
                     <span
                         onClick={onToggle}
                         className="
-                text-neutral-800
-                cursor-pointer 
-                hover:underline
-            "
-                    > Create an account</span>
+                            text-neutral-800
+                            cursor-pointer 
+                            hover:underline
+                        "
+                    > Créer un compte</span>
                 </p>
             </div>
         </div>
@@ -128,7 +129,7 @@ const LoginModal = () => {
         <Modal
             disabled={isLoading}
             isOpen={loginModal.isOpen}
-            title="Login"
+            title="Connexion"
             actionLabel="Continue"
             onClose={loginModal.onClose}
             onSubmit={handleSubmit(onSubmit)}
